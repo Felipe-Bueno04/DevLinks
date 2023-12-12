@@ -70,6 +70,7 @@ body *{
 }
 
 #switch button{
+  --_transitionTime: 0.3s; /*Boa prática de CSS: aquele _ significa que essa variável não é global, vai modificar apenas este componente, o switch. Se não tiver o _, a variável é global.*/
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
@@ -79,11 +80,13 @@ body *{
   top: 50%;
   left: 0;
   z-index: 1;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateX(0);
+  transition: all var(--_transitionTime) ease-in-out;
 }
 
 .light #switch button{
-  animation: slide-in 0.4s forwards;
+  transition: all var(--_transitionTime) ease-in-out;
+  transform: translateY(-50%) translateX(100%);
 }
 
 #switch span{
