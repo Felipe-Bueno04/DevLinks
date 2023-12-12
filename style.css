@@ -83,8 +83,7 @@ body *{
 }
 
 .light #switch button{
-  right: 0;
-  left: initial;
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span{
@@ -167,5 +166,19 @@ ul li a{
 
   .light{
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slide-in {
+  
+  /* Onde vai começar a animação*/
+  /* from{
+    left: 0;
+  } */
+
+  /* Onde vai terminar a animação */
+  to{
+    right: 0;
   }
 }
