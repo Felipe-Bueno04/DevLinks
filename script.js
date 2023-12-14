@@ -9,7 +9,7 @@ function WebSite_theme(){
   // Condição para substituir a imagem de perfil.
   if(html.classList.contains('light')) {
     // Se tiver light mode, adicionar a imagem light.
-    img.setAttribute('src', './assets/avatar-light.png');
+    img.setAttribute('src', './assets/Felipe_Light_Mode.png');
   } else {
     // Se tiver dark mode, manter a imagem normal.
     img.setAttribute('src', './assets/avatar.png');
