@@ -33,13 +33,14 @@ function ThemeProvider() {
   // Veriricar se existe a chave theme no localStorage
   const hasThemeKey = localStorage.getItem(themeKey)
 
-  // Se for diferente de null, quer dizer que  possui valor de dark ou light
+  // Se for diferente de null, quer dizer que  possui valor de dark ou light então atribuir
   if(hasThemeKey) {
     // Se  for light, adicionar lightTheme no body, caso contrário, remover
     hasThemeKey === lightTheme ? body.classList.add(lightTheme) :
     body.classList.remove(lightTheme)
   } else {
     localStorage.setItem(themeKey, darkTheme)
+    body.classList.remove(lightTheme)
   }
   
   // Adicionar a primeira Image
