@@ -1,30 +1,30 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root{
+:root {
   --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.05);
-  --surface-color-hover: rgba(0,0,0,0.02);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./assets/moon-stars.svg);
 }
 
-.light{
+.light {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
-  --stroke-color: rgba(0,0,0,0.5);
-  --surface-color: rgba(0,0,0,0.05);
-  --surface-color-hover: rgba(0,0,0,0.02);
-  --highlight-color: rgba(0,0,0,0.1);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./assets/sun.svg);
 }
 
-body{
+body {
   /* background-image: url(assets/bg-mobile.jpg);
   background-repeat: no-repeat;
   background-position: top center;
@@ -33,36 +33,84 @@ body{
   height: 100vh;
 }
 
-body *{
-  font-family: 'Inter', sans-serif;
+body * {
+  font-family: "Inter", sans-serif;
   color: var(--text-color);
 }
 
-#container{
+#container {
   width: 100%;
   max-width: 588px;
   margin: 56px auto 0px auto;
   padding: 0 24px;
 }
 
-
 /* Profile */
-#profile{
+#profile {
   text-align: center;
   padding: 24px;
 }
 
-#profile img{
+#profile img {
   width: 112px;
 }
 
-#profile p{
+#profile p {
   font-weight: 500;
   line-height: 24px;
   margin-top: 8px;
 }
 
 /* Switch */
+#switch {
+  cursor: pointer;
+  position: relative;
+  width: 82px;
+  height: 32px;
+  margin: 24px auto 4px;
+  border-radius: 99999px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  transition: transform 1s ease-in-out;
+}
+
+#switch > span {
+  background-color: black;
+  position: absolute;
+  padding: 12px;
+  background: #00000025 var(--switch-bg-url) no-repeat center;
+  border-radius: 99999px;
+  top: 50%;
+  left: 0px;
+  width: 1rem;
+  height: 1rem;
+  transform: translateX(8px) translateY(-50%);
+  -webkit-transform: translateX(8px) translateY(-50%);
+  -moz-transform: translateX(8px) translateY(-50%);
+  -o-transform: translateX(8px) translateY(-50%);
+  -ms-transform: translateX(8px) translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  -moz-transition: -moz-transform 0.3s ease-in-out;
+  -o-transition: -o-transform 0.3s ease-in-out;
+  -ms-transition: -ms-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+#switch > span:hover {
+  border-radius: 999999px;
+  border-width: 2px;
+  outline: 2px solid var(--highlight-color);
+}
+
+body.light #switch > span {
+  transform: translateX(54px) translateY(-50%);
+  -webkit-transform: translateX(54px) translateY(-50%);
+  -moz-transform: translateX(54px) translateY(-50%);
+  -o-transform: translateX(54px) translateY(-50%);
+  -ms-transform: translateX(54px) translateY(-50%);
+}
+
+/*
 #switch{
   position: relative;
   width: 64px;
@@ -71,7 +119,7 @@ body *{
 
 #switch button{
   --_transitionTime: 0.3s; /*Boa prática de CSS: aquele _ significa que essa variável não é global, vai modificar apenas este componente, o switch. Se não tiver o _, a variável é global.*/
-  width: 32px;
+/*width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
@@ -84,28 +132,24 @@ body *{
   transition: all var(--_transitionTime) ease-in-out;
 }
 
-#switch button:hover{
+#switch button:hover {
   outline: 8px solid var(--highlight-color);
 }
 
-.light #switch button{
+.light #switch button {
   transition: all var(--_transitionTime) ease-in-out;
   transform: translateY(-50%) translateX(100%);
 }
 
-#switch span{
+#switch span {
   display: block;
   width: 64px;
   height: 24px;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 9999px;
 }
+*/
 
 /* Links */
-ul{
+ul {
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -113,12 +157,12 @@ ul{
   padding: 24px 0;
 }
 
-ul li a{
+ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 16px 24px;
-  background: var(--surface-color); 
+  background: var(--surface-color);
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
   backdrop-filter: blur(4px);
@@ -127,65 +171,62 @@ ul li a{
   transition: background 0.2s;
 }
 
-
 /* pseudo-selector 
 
   Nele, defino o que acontece quando coloco o ponteiro do mouse em cima de alguma coisa 
 */
-  ul li a:hover{
-    background: var(--surface-color-hover);
-    border: 1.5px solid var(--text-color);
-  }
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
 
-  /* social-links */
-  #social-links{
-    display: flex;
-    justify-content: center;
-    padding: 24px 0;
-    font-size: 24px;
-  }
+/* social-links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  font-size: 24px;
+}
 
-  #social-links a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    transition: 0.2s;
-    border-radius: 50%;
-  }
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: 0.2s;
+  border-radius: 50%;
+}
 
-  #social-links a:hover{
-    background: var(--highlight-color);
-  }
+#social-links a:hover {
+  background: var(--highlight-color);
+}
 
-  footer{
-    padding: 24px 0;
-    text-align: center;
-    font-size: 14px;
-  }
-
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
 
 /* Media Queries */
-@media (min-width: 700px){
-  :root{
+@media (min-width: 700px) {
+  :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
 
-  .light{
+  .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
   }
 }
 
 /* animation */
 @keyframes slide-in {
-  
   /* Onde vai começar a animação*/
   /* from{
     left: 0;
   } */
 
   /* Onde vai terminar a animação */
-  to{
+  to {
     right: 0;
   }
 }
