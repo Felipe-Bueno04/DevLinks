@@ -12,62 +12,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DevLinks</title>
     <link rel="stylesheet" href="style.css" />
-
-    <script src="./script.js" defer></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-      defer
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-      defer
-    ></script>
   </head>
-  <body class="light">
+  <body>
     <div id="container">
       <div id="profile">
-        <img alt="Foto de Felipe Bueno" />
+        <img src="./assets/Felipe_Dark-Mode.png" alt="Foto de Felipe Bueno"/>
         <p>@Felipe Bueno</p>
-
-        <button id="switch">
-          <span></span>
-        </button>
       </div>
-
-      <!-- <div id="switch">
+      <div id="switch" onclick="WebSite_theme()">
         <button></button>
         <span></span>
-      </div> -->
+      </div>
 
       <!-- Mudar os links depois para ficar as minhas coisas.  -->
       <ul>
         <li>
-          <a href="./Curriculo_Felipe.html" target="_self">Meu currículo</a>
+          <a href="https://drive.google.com/file/d/1jdnLM5DMHfagpuav54LnE8sSXZkPbx-5/view">Meu Currículo</a>
         </li>
-        <!--<li>
-          <a href="">Baixar meu e-book</a>
-        </li>
-        <li>
-          <a href="">Ver meu portfólio</a>
-        </li>
-        <li>
-          <a href="" target="_blank">Conheça meu Explorer</a>
-        </li> -->
       </ul>
       <div id="social-links">
         <a href="https://github.com/Felipe-Bueno04" target="_blank">
           <ion-icon name="logo-github"></ion-icon>
         </a>
-
-        <!--<a href="" target="_blank">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a>
-
-        <a href="" target="_blank">
-          <ion-icon name="logo-youtube"></ion-icon>
-        </a> -->
 
         <a href="https://www.linkedin.com/in/felipe-alves-bueno-708aa6237/" target="_blank">
           <ion-icon name="logo-linkedin"></ion-icon>
@@ -76,5 +42,16 @@
     </div>
 
     <footer>Feito com ♥ por Felipe Bueno</footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./script.js"></script>
   </body>
 </html>

@@ -29,6 +29,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover; */
+
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 }
@@ -63,90 +64,40 @@ body * {
 
 /* Switch */
 #switch {
-  cursor: pointer;
-  position: relative;
-  width: 82px;
-  height: 32px;
-  margin: 24px auto 4px;
-  border-radius: 99999px;
-  background: var(--surface-color);
-  border: 1px solid var(--stroke-color);
-  transition: transform 1s ease-in-out;
-}
-
-#switch > span {
-  background-color: black;
-  position: absolute;
-  padding: 12px;
-  background: #00000025 var(--switch-bg-url) no-repeat center;
-  border-radius: 99999px;
-  top: 50%;
-  left: 0px;
-  width: 1rem;
-  height: 1rem;
-  transform: translateX(8px) translateY(-50%);
-  -webkit-transform: translateX(8px) translateY(-50%);
-  -moz-transform: translateX(8px) translateY(-50%);
-  -o-transform: translateX(8px) translateY(-50%);
-  -ms-transform: translateX(8px) translateY(-50%);
-  -webkit-transition: -webkit-transform 0.3s ease-in-out;
-  -moz-transition: -moz-transform 0.3s ease-in-out;
-  -o-transition: -o-transform 0.3s ease-in-out;
-  -ms-transition: -ms-transform 0.3s ease-in-out;
-  transition: transform 0.3s ease-in-out;
-}
-
-#switch > span:hover {
-  border-radius: 999999px;
-  border-width: 2px;
-  outline: 2px solid var(--highlight-color);
-}
-
-body.light #switch > span {
-  transform: translateX(54px) translateY(-50%);
-  -webkit-transform: translateX(54px) translateY(-50%);
-  -moz-transform: translateX(54px) translateY(-50%);
-  -o-transform: translateX(54px) translateY(-50%);
-  -ms-transform: translateX(54px) translateY(-50%);
-}
-
-/*
-#switch{
   position: relative;
   width: 64px;
+
   margin: 4px auto;
 }
 
-#switch button{
-  --_transitionTime: 0.3s; /*Boa prática de CSS: aquele _ significa que essa variável não é global, vai modificar apenas este componente, o switch. Se não tiver o _, a variável é global.*/
-/*width: 32px;
+#switch button {
+  width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
   border: 0;
   border-radius: 50%;
+
   position: absolute;
   top: 50%;
-  left: 0;
+  animation: slide-out 0.4s;
   z-index: 1;
-  transform: translateY(-50%) translateX(0);
-  transition: all var(--_transitionTime) ease-in-out;
-}
-
-#switch button:hover {
-  outline: 8px solid var(--highlight-color);
+  transform: translateY(-50%);
 }
 
 .light #switch button {
-  transition: all var(--_transitionTime) ease-in-out;
-  transform: translateY(-50%) translateX(100%);
+  animation: slide-in 0.4s forwards;
 }
 
 #switch span {
   display: block;
   width: 64px;
   height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
 }
-*/
 
 /* Links */
 ul {
@@ -166,15 +117,17 @@ ul li a {
   border: 1px solid var(--stroke-color);
   border-radius: 8px;
   backdrop-filter: blur(4px);
+
   text-decoration: underline;
   font-weight: 500;
+
   transition: background 0.2s;
 }
 
 /* pseudo-selector 
 
-  Nele, defino o que acontece quando coloco o ponteiro do mouse em cima de alguma coisa 
-*/
+  Nele, defino o que acontece quando coloco o ponteiro do mouse em cima de alguma coisa.*/
+
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
@@ -207,7 +160,7 @@ footer {
   font-size: 14px;
 }
 
-/* Media Queries */
+/* Media Queries*/
 @media (min-width: 700px) {
   :root {
     --bg-url: url(./assets/bg-desktop.jpg);
@@ -218,15 +171,22 @@ footer {
   }
 }
 
-/* animation */
 @keyframes slide-in {
-  /* Onde vai começar a animação*/
-  /* from{
+  /*Início da animação*/
+  from {
     left: 0;
-  } */
-
-  /* Onde vai terminar a animação */
+  }
+  /*Fim da animação*/
   to {
-    right: 0;
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from{
+    left: 50%;
+  }
+  to{
+    left: 0;
   }
 }
